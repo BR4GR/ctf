@@ -1,0 +1,20 @@
+c = 861270243527190895777142537838333832920579264010533029282104230006461420086153423
+n = 1311097532562595991877980619849724606784164430105441327897358800116889057763413423
+e = 65537
+
+# f = FactorDB(n)
+# f.connect()
+# p, q = f.get_factor_list()
+
+p = 1955175890537890492055221842734816092141
+q = 670577792467509699665091201633524389157003
+
+from math import lcm
+from Crypto.Util.number import inverse
+
+phi = lcm(p-1, q-1)
+print(phi)
+
+d = inverse(e, phi)
+decrypted = pow(c, d, n)
+print("Flag: {}".format(bytearray.fromhex(format(decrypted, 'x')).decode()))
