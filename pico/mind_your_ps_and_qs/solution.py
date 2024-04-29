@@ -12,9 +12,9 @@ q = 670577792467509699665091201633524389157003
 from math import lcm
 from Crypto.Util.number import inverse
 
-phi = lcm(p-1, q-1)
+phi = lcm(p - 1, q - 1)
 print(phi)
 
 d = inverse(e, phi)
 decrypted = pow(c, d, n)
-print("Flag: {}".format(bytearray.fromhex(format(decrypted, 'x')).decode()))
+print("Flag: {}".format(bytearray.fromhex(format(decrypted, "x")).decode()))

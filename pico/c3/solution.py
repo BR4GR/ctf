@@ -1,7 +1,8 @@
-chars = 'DLSeGAGDgBNJDQJDCFSFnRBIDjgHoDFCFtHDgJpiHtGDmMAQFnRBJKkBAsTMrsPSDDnEFCFtIbEDtDCIbFCFtHTJDKerFldbFObFCFtLBFkBAAAPFnRBJGEkerFlcPgKkImHnIlATJDKbTbFOkdNnsgbnJRMFnRBNAFkBAAAbrcbTKAkOgFpOgFpOpkBAAAAAAAiClFGIPFnRBaKliCgClFGtIBAAAAAAAOgGEkImHnIl'
+chars = "DLSeGAGDgBNJDQJDCFSFnRBIDjgHoDFCFtHDgJpiHtGDmMAQFnRBJKkBAsTMrsPSDDnEFCFtIbEDtDCIbFCFtHTJDKerFldbFObFCFtLBFkBAAAPFnRBJGEkerFlcPgKkImHnIlATJDKbTbFOkdNnsgbnJRMFnRBNAFkBAAAbrcbTKAkOgFpOgFpOpkBAAAAAAAiClFGIPFnRBaKliCgClFGtIBAAAAAAAOgGEkImHnIl"
+
 
 def decrypt(encrypted_chars):
-    lookup1 = "\n \"#()*+/1:=[]abcdefghijklmnopqrstuvwxyz"
+    lookup1 = '\n "#()*+/1:=[]abcdefghijklmnopqrstuvwxyz'
     lookup2 = "ABCDEFGHIJKLMNOPQRSTabcdefghijklmnopqrst"
 
     out = ""
@@ -19,21 +20,23 @@ def decrypt(encrypted_chars):
 
     return out
 
+
 decrypted_message = decrypt(chars)
 # print(decrypted_message)
 
-#asciiorder
-#fortychars
-#selfinput
-#pythontwo
+# asciiorder
+# fortychars
+# selfinput
+# pythontwo
 
 chars = ""
 from fileinput import input
+
 for line in input():
     chars += line
 b = 1 / 1
 
 for i in range(len(chars)):
     if i == b * b * b:
-        print(chars[i]) #prints
+        print(chars[i])  # prints
         b += 1 / 1
