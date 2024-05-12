@@ -1,21 +1,16 @@
 from binascii import unhexlify
 from pwn import xor
-import string
-import itertools
 
 # I've encrypted the flag with my secret key, you'll never be able to guess it.
-s = unhexlify('0e0b213f26041e480b26217f27342e175d0e070a3c5b103e2526217f27342e175d0e077e263451150104')
+s: bytes = unhexlify('0e0b213f26041e480b26217f27342e175d0e070a3c5b103e2526217f27342e175d0e077e263451150104')
+known_plaintext: bytes = b"crypto{"
 
-def generate_passwords(length):
-    characters = string.ascii_lowercase + string.ascii_uppercase + string.digits
-    for password in itertools.product(characters, repeat=length):
-        yield ''.join(password)
+key = xor(s[:len(known_plaintext) + 1], known_plaintext)
+print(key)
 
+key = b"myXORkey"
+flag: str = xor(s, key).decode()
+print(flag)
 
-for i in range(5):
-    for password in generate_passwords(i):
-        res = (xor(s, password)).decode()
-        if "crypto" in res:
-            print(res)
-            break
+# crypto{1f_y0u_Kn0w_En0uGH_y0u_Kn0w_1t_4ll}
 
