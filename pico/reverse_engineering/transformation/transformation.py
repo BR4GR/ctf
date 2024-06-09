@@ -1,4 +1,4 @@
-with open("enc", "r+") as file1:
+with open("enc.1", "r+") as file1:
     enc_flag = file1.read()
 
 
